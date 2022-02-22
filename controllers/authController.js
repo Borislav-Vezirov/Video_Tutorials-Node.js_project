@@ -7,7 +7,7 @@ const router = require('express').Router();
 
 router.get('/register', isGuest(), (req, res) => {
     
-    res.render('register');
+    res.render('register', { pageTitle: 'Register Page' });
 });
 
 router.post('/register', isGuest(), async (req, res) => {
@@ -38,7 +38,7 @@ router.post('/register', isGuest(), async (req, res) => {
 
 router.get('/login', isGuest(), (req, res) => {
     
-    res.render('login');
+    res.render('login', { pageTitle: 'Login Page' });
 });
 
 router.post('/login', isGuest(), async (req, res) => {

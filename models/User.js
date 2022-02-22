@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const pattern  = /^[A-Za-z0-9]{5, }$/;
+const pattern  = /^[A-Za-z0-9]{5,}$/;
 
 const userSchema = new mongoose.Schema({
     username: {type: String, validate: {
@@ -10,13 +10,9 @@ const userSchema = new mongoose.Schema({
         },
         message: 'First name must contains only english letters and digits!'
     }},
-    password: {type: String, validate: {
-        validator(value){
-            return pattern.test(value);
-        },
-        message: 'Password must contains only english letters and digits and be more than 4 characters!'
-    }},
-    courses : [],
+    password: {type: String, minlength: [5, 'Password must contains more then 4 symbols']},
+    courses : [{type: mongoose.Types.ObjectId, ref: 'Course', required: true }],
+
 });
 
 userSchema.index({ username: 1 }, {
