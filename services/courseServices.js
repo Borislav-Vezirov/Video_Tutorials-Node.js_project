@@ -10,6 +10,12 @@ async function createPost(course){
     return result;
 };
 
+async function getAllCourse(){
+
+    return await Course.find({}).lean();
+};
+
 module.exports = {
-    createPost
+    createPost,
+    getAllCourse
 }
