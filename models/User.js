@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
         message: 'First name must contains only english letters and digits!'
     }},
     password: {type: String, minlength: [5, 'Password must contains more then 4 symbols']},
-    courses : [{type: mongoose.Types.ObjectId, ref: 'Course', required: true }],
+    courses : [{type: mongoose.Types.ObjectId, ref: 'Course'}],
 
 });
 

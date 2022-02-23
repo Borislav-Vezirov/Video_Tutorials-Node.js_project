@@ -12,7 +12,7 @@ function mapErrors(err){
 
     }else{
         
-        return [{ msg: err.message }];
+        return [{ msg: 'Request Error!' }];
     };
 };
 

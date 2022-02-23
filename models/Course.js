@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
     image         : {type: String, required: true},
     isPublic      : {type: Boolean, default: false },
     enrolledUsers : [{type: mongoose.Types.ObjectId, ref: 'User'}],
+    author        : {type: mongoose.Types.ObjectId, ref: 'User'}
 },{
     
     timestamps: true
